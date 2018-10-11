@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("air")
 @RequiredArgsConstructor
@@ -21,5 +23,10 @@ public class AirConditionController {
     @GetMapping("{id}")
     public AirConditionDto getAirConditionById(@PathVariable String id) {
         return null;
+    }
+
+    @GetMapping
+    public List<AirConditionDto> getAllAirConditions(){
+        return service.getAllAirConditions();
     }
 }
